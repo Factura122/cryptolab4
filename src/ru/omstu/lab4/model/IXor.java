@@ -17,10 +17,4 @@ public interface IXor {
      * @return encryption result of char type
      */
     char encryptData();
-
-    /**
-     * Decrypt data.
-     * @return decryption result of String type
-     */
-    String decryptData();
 }

@@ -39,13 +39,4 @@ public final class Xor implements IXor {
         currentKey = (currentKey * a + b) % m;
         return result;
     }
-
-    /**
-     *
-     * @return
-     */
-    @Override
-    public String decryptData() {
-        return null;
-    }
 }
