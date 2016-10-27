@@ -26,12 +26,19 @@ final class LabInit {
         Scanner in = new Scanner(System.in);
         final int key = in.nextInt();
         ReadFile readFile = new ReadFile("src/input.txt");
-        Writer writeFile = new Writer("src/encrypt.txt");
+        Writer writeEncrypt = new Writer("src/encrypt.txt");
         Xor encryptingData = new Xor();
         EncryptData encryptData = new EncryptData();
-        encryptData.encrypt(readFile, writeFile, encryptingData, key);
+        encryptData.encrypt(readFile, writeEncrypt, encryptingData, key);
         readFile.close();
-        writeFile.close();
+        writeEncrypt.close();
+        System.out.println("Encrypted completed");
+        Writer writeDecrypt = new Writer("src/decrypt.txt");
+        ReadFile readEncrypt = new ReadFile("src/encrypt.txt");
+        encryptData.encrypt(readEncrypt, writeDecrypt, encryptingData, key);
+        readEncrypt.close();
+        writeDecrypt.close();
+        System.out.println("Decrypted complete");
         System.out.println("Program completed");
     }
 }
