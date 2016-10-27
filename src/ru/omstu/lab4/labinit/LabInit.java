@@ -5,6 +5,8 @@ import ru.omstu.lab4.model.ReadFile;
 import ru.omstu.lab4.model.Writer;
 import ru.omstu.lab4.model.Xor;
 
+import java.util.Scanner;
+
 /**
  * Created by USER on 27.10.2016.
  * Application initializer
@@ -20,7 +22,9 @@ final class LabInit {
      * @param args of String[] type
      */
     public static void main(final String[] args) {
-        final int key = 4;
+        System.out.println("Enter key:");
+        Scanner in = new Scanner(System.in);
+        final int key = in.nextInt();
         ReadFile readFile = new ReadFile("src/input.txt");
         Writer writeFile = new Writer("src/encrypt.txt");
         Xor encryptingData = new Xor();
@@ -28,5 +32,6 @@ final class LabInit {
         encryptData.encrypt(readFile, writeFile, encryptingData, key);
         readFile.close();
         writeFile.close();
+        System.out.println("Program completed");
     }
 }
